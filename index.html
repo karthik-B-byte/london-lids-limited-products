@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>London Lids Product Catalog</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="London Lids Logo" class="logo" />
+    <h1>London Lids Product Catalog</h1>
+    <input type="text" id="search" placeholder="Search products..." />
+  </header>
+
+  <main class="container">
+    <div id="product-list" class="products">
+      <div class="product">
+        <a href="aluminium.html">
+          <img src="product_images/All product images/aluminium-category.png" alt="Aluminium">
+          <h3>Aluminium Containers</h3>
+        </a>
+        <p>Includes foil containers (Silver & Gold brand grouped)</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>&copy; 2025 London Lids Ltd. All rights reserved.</footer>
+
+  <script>
+    const search = document.getElementById("search");
+    const products = document.querySelectorAll(".product");
+    search.addEventListener("input", () => {
+      const query = search.value.toLowerCase();
+      products.forEach(product => {
+        const text = product.innerText.toLowerCase();
+        product.style.display = text.includes(query) ? "" : "none";
+      });
+    });
+  </script>
+</body>
+</html>
