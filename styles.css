@@ -28,22 +28,6 @@ input[type="text"] {
   border: none;
   border-radius: 5px;
 }
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  background-color: #1f2c38;
-  padding: 15px 0;
-}
-nav a {
-  color: #e4a342;
-  text-decoration: none;
-  font-weight: bold;
-}
-nav a:hover {
-  text-decoration: underline;
-}
 .container {
   padding: 30px;
 }
