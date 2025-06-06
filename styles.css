@@ -4,18 +4,10 @@ body {
   color: white;
   margin: 0;
   padding: 0;
-  background-image: url('product_images/background_homepage_clean.png');
-  background-size: cover;
-  background-position: center;
-  animation: zoom 20s ease-in-out infinite alternate;
-@keyframes zoom {
-  0% { background-size: 100%; }
-  100% { background-size: 105%; }
-}
 header {
   text-align: center;
   padding: 20px;
-  background-color: rgba(22, 32, 41, 0.85);
+  background-color: #0e141a;
 }
 .logo {
   width: 150px;
@@ -58,7 +50,7 @@ input[type="text"] {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: rgba(22, 32, 41, 0.85);
+  background-color:#0e141a;
   color: white;
   margin-top: 40px;
 }
