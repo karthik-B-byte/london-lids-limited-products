@@ -10,7 +10,7 @@
   <header>
     <img src="logo.png" alt="London Lids Logo" class="logo" />
     <h1>London Lids Product Catalog</h1>
-    <input type="text" id="search" placeholder="Search categories..." />
+    <input type="text" id="search" placeholder="Search products or categories..." />
   </header>
 
   <main class="container">
@@ -29,13 +29,31 @@
 
   <script>
     const search = document.getElementById("search");
-    const products = document.querySelectorAll(".product");
+    const queryToPage = {
+      "foil": "foil.html",
+      "cling": "foil.html",
+      "napkin": "napkins.html",
+      "roll": "napkins.html",
+      "bag": "paper.html",
+      "kraft": "paper.html",
+      "gastro": "aluminium.html",
+      "no.": "aluminium.html",
+      "microwave": "plastic.html",
+      "deli": "plastic.html",
+      "sauce": "plastic.html",
+      "plate": "bagasse.html",
+      "bowl": "bagasse.html",
+      "clamshell": "bagasse.html"
+    };
+
     search.addEventListener("input", () => {
       const query = search.value.toLowerCase();
-      products.forEach(product => {
-        const text = product.innerText.toLowerCase();
-        product.style.display = text.includes(query) ? "" : "none";
-      });
+      for (const key in queryToPage) {
+        if (query.includes(key)) {
+          window.location.href = queryToPage[key];
+          break;
+        }
+      }
     });
   </script>
 </body>
