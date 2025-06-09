@@ -18,6 +18,10 @@ h1 {
   color: #e4a342;
   font-size: 2em;
 }
+h3 {
+  color: #e4a342;
+  font-size: 1em;
+}
 input[type="text"] {
   width: 60%;
   padding: 10px;
