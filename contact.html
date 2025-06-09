@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #1f2c38;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-bottom: 15px;
+    }
+    iframe {
+      border-radius: 10px;
+      margin: 30px auto;
+      display: block;
+    }
+    .contact-info {
+      text-align: center;
+      margin-top: 30px;
+      color: white;
+    }
+    .contact-info h2 {
+      color: #e4a342;
+    }
+    .contact-info p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" style="color:#e4a342;">← Back to Home</a>
+    <h1>Contact Us</h1>
+  </header>
+
+  <div class="container">
+
+    <div class="contact-info">
+      <h2>Thank You for Exploring Our Collection</h2>
+      <p>At the heart of our packaging solutions lies a commitment to quality, safety, and innovation.</p>
+      <p>Each product is crafted with precision and backed by our passion for serving the food industry with reliable packaging.</p>
+      <p>We’re proud to be your <strong>trusted manufacturer and supplier of premium food packaging solutions</strong>.</p>
+      <p><strong>E-mail:</strong> info@londonlidsltd.com</p>
+      <p><strong>Website:</strong> www.londonlidsltd.com</p>
+      <p><strong>Phone:</strong> 0208 523 2000</p>
+      <p><strong>Address:</strong> UNIT 2, JUSTIN ROAD, AVENUE INDUSTRIAL ESTATE, LONDON, E4 8SU</p>
+    </div>
+
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="6" placeholder="Your message..." required></textarea>
+
+      <button type="submit" style="background-color:#e4a342; color:#162029; font-weight:bold; border:none; padding:10px 20px; border-radius:5px;">Send</button>
+    </form>
+
+    <iframe
+      src="https://www.google.com/maps?q=UNIT+2,+Justin+Road,+Avenue+Industrial+Estate,+London,+E4+8SU&output=embed"
+      width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+
+  <footer>&copy; 2025 London Lids Ltd. All rights reserved.</footer>
+</body>
+</html>
