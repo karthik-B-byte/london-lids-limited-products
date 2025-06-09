@@ -7,37 +7,69 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="London Lids Logo" class="logo" />
-    <h1>London Lids Product Catalog</h1>
-    <input type="text" id="search" placeholder="Search categories..." />
+  <header style="text-align:center; padding-top: 10px;">
+    <img src="product_images/logo.png" alt="London Lids Logo" style="height:60px;">
+    <h1 style="color: #e4a342;">London Lids Product Catalog</h1>
+    <input type="text" id="searchInput" placeholder="Search products..." />
   </header>
 
-  <main class="container">
-    <div id="product-list" class="products">
-      <div class="product"><a href="aluminium.html"><img src="product_images/aluminium-category.png"><h3>Aluminium</h3></a></div>
-      <div class="product"><a href="plastic.html"><img src="product_images/plastic-category.png"><h3>Plastic</h3></a></div>
-      <div class="product"><a href="bagasse.html"><img src="product_images/bagasse-category.png"><h3>Bagasse</h3></a></div>
-      <div class="product"><a href="paper.html"><img src="product_images/paper-category.png"><h3>Paper & Bags</h3></a></div>
-      <div class="product"><a href="napkins.html"><img src="product_images/napkin-category.png"><h3>Napkins & Rolls</h3></a></div>
-      <div class="product"><a href="lids.html"><img src="product_images/lids-category.png"><h3>Lids</h3></a></div>
-      <div class="product"><a href="foil.html"><img src="product_images/foil-category.png"><h3>Foil & Cling Film</h3></a></div>
+  <div class="container" style="margin-top: 30px;">
+    <div class="categories">
+      <div class="card">
+        <a href="aluminium.html">
+          <img src="product_images/aluminium.png" alt="Aluminium" />
+          <h2>Aluminium Containers</h2>
+          <p>Includes foil containers of all sizes and strengths (Silver & Gold).</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="plastic.html">
+          <img src="product_images/plastic.png" alt="Plastic" />
+          <h2>Plastic Containers</h2>
+          <p>Microwave, salad boxes, deli pots, lids, and more.</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="bagasse.html">
+          <img src="product_images/bagasse.png" alt="Bagasse" />
+          <h2>Bagasse Products</h2>
+          <p>Eco-friendly bowls, plates, clamshells, and straws.</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="paper.html">
+          <img src="product_images/paper.png" alt="Paper" />
+          <h2>Paper & Plastic Bags</h2>
+          <p>Includes kraft bags, SOS plastic, foil bags, greaseproof liners.</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="napkins.html">
+          <img src="product_images/napkins.png" alt="Napkins" />
+          <h2>Napkins & Rolls</h2>
+          <p>Serviettes, centerfeed rolls, and soft tissue paper.</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="lids.html">
+          <img src="product_images/lids.png" alt="Lids" />
+          <h2>Lids</h2>
+          <p>Paper, poly, and hood lids for various container types.</p>
+        </a>
+      </div>
+      <div class="card">
+        <a href="foil.html">
+          <img src="product_images/foil.png" alt="Foil & Cling Film" />
+          <h2>Foil & Cling Film</h2>
+          <p>Rolls in various widths and lengths, boxed for convenience.</p>
+        </a>
+      </div>
     </div>
-  </main>
+  </div>
 
-  <footer><a href="contact.html" style="color:#e4a342;">Contact Us</a>
-&copy; 2025 London Lids Ltd. All rights reserved.</footer>
-
-  <script>
-    const search = document.getElementById("search");
-    const products = document.querySelectorAll(".product");
-    search.addEventListener("input", () => {
-      const query = search.value.toLowerCase();
-      products.forEach(product => {
-        const text = product.innerText.toLowerCase();
-        product.style.display = text.includes(query) ? "" : "none";
-      });
-    });
-  </script>
+  <footer>
+    <p>&copy; 2025 London Lids Ltd. All rights reserved.</p>
+    <p><a href="contact.html" style="color:#e4a342;">Contact Us</a></p>
+  </footer>
 </body>
 </html>
