@@ -53,18 +53,18 @@ input[type="text"] {
   padding: 30px;
 }
 
-/* Responsive Product Grid */
 .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
 .product {
   background-color: #1f2c38;
   border-radius: 10px;
   padding: 16px;
-  width: 100%;
+  width: 280px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -98,7 +98,6 @@ footer {
 #overlay.active {
   display: block;
 }
-
 /* === Hero Section === */
 .hero-section {
   position: relative;
@@ -134,11 +133,12 @@ footer {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   color: #e4a342;
 }
-
+/* Override color for h2 specifically */
 .hero-section h2 {
   color: white;
 }
 
+/* Adjusted spacing between elements */
 .hero-section h1 {
   font-size: 2em;
   margin: 10px 0 5px;
@@ -165,6 +165,7 @@ footer {
   font-size: 16px;
   width: 300px;
 }
+
 
 /* === Animations === */
 @keyframes fadeIn {
@@ -195,43 +196,4 @@ footer {
   position: relative;
   color: #e4a342;
   animation: pulse 2s infinite;
-}
-
-/* === Responsive Adjustments === */
-@media (max-width: 768px) {
-  .hero-section {
-    height: auto;
-    padding: 40px 10px;
-    background-position: top;
-  }
-
-  .hero-section h1 {
-    font-size: 1.5em;
-  }
-
-  .hero-section h2 {
-    font-size: 1.2em;
-  }
-
-  .hero-section h3 {
-    font-size: 0.9em;
-  }
-
-  .hero-section input[type="text"] {
-    width: 90%;
-    max-width: 100%;
-  }
-
-  .container {
-    padding: 20px 10px;
-  }
-
-  .logo {
-    width: 120px;
-  }
-
-  footer {
-    font-size: 0.9em;
-    padding: 15px;
-  }
 }
