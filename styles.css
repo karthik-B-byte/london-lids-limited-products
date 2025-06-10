@@ -107,11 +107,13 @@ footer {
   background-size: cover;
   background-position: center;
   display: flex;
+  flex-direction: column;  /* Align items vertically */
   justify-content: center;
   align-items: center;
   animation: fadeIn 1.5s ease-in forwards;
   opacity: 0.5;
   overflow: hidden;
+  text-align: center; /* Center all text inside */
 }
 
 .hero-section::before {
@@ -122,13 +124,18 @@ footer {
   z-index: 0;
 }
 
-.hero-section header {
+.hero-section img,
+.hero-section h1,
+.hero-section h2,
+.hero-section h3,
+.hero-section input[type="text"] {
   position: relative;
   z-index: 1;
-  color: white;
-  text-align: center;
+  margin: 10px 0;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  color: white;
 }
+
 
 .hero-section input[type="text"] {
   margin-top: 15px;
