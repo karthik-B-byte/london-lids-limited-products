@@ -197,3 +197,62 @@ footer {
   color: #e4a342;
   animation: pulse 2s infinite;
 }
+/* === Responsive Styles === */
+@media (max-width: 768px) {
+  /* Resize hero section for mobile */
+  .hero-section {
+    height: auto;
+    padding: 40px 10px;
+    background-position: top;
+  }
+
+  .hero-section h1 {
+    font-size: 1.5em;
+  }
+
+  .hero-section h2 {
+    font-size: 1.2em;
+  }
+
+  .hero-section h3 {
+    font-size: 0.9em;
+  }
+
+  .hero-section input[type="text"] {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  /* Product grid - stack items */
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  /* Menu button positioning */
+  .menu-toggle {
+    top: 10px;
+    left: 10px;
+  }
+
+  /* Container padding */
+  .container {
+    padding: 20px 10px;
+  }
+
+  /* Logo scaling */
+  .logo {
+    width: 120px;
+  }
+
+  footer {
+    font-size: 0.9em;
+    padding: 15px;
+  }
+}
+
