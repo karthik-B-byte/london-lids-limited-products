@@ -126,7 +126,7 @@ footer {
 
 .hero-section img,
 .hero-section h1,
-.hero-section h2,
+.hero-section h2; color: white;
 .hero-section h3,
 .hero-section input[type="text"] {
   position: relative;
