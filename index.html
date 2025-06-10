@@ -47,7 +47,7 @@
     }
   </style>
 </head>
-<body>
+<body class="home-page">
 
 <!-- ☰ Hamburger Icon -->
 <div class="menu-toggle" onclick="toggleMenu()">
@@ -60,10 +60,13 @@
 <nav id="sidebar">
   <a href="index.html">Home</a>
   <a href="about.html">About Us</a>
-  <a href="products.html">Products</a>
+  <a href="#product-list" class="special-products">Products</a>
   <a href="contact.html">Contact Us</a>
   <a href="Product Catalog Presentation RD.pdf" download>Download Catalog</a>
 </nav>
+
+<!-- Overlay for closing sidebar -->
+<div id="overlay" onclick="closeMenu()"></div>
 
 <header>
   <img src="logo.png" alt="London Lids Logo" class="logo" />
@@ -86,13 +89,21 @@
 </main>
 
 <footer>
-  <p><a href="contact.html" style="color: #e4a342;">Contact Us</a></p>
+  <p><a href="contact.html">Contact Us</a></p>
   <p>&copy; 2025 London Lids Ltd. All rights reserved.</p>
 </footer>
 
 <script>
   function toggleMenu() {
-    document.getElementById('sidebar').classList.toggle('active');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const isOpen = sidebar.classList.toggle('active');
+    overlay.classList.toggle('active', isOpen);
+  }
+
+  function closeMenu() {
+    document.getElementById('sidebar').classList.remove('active');
+    document.getElementById('overlay').classList.remove('active');
   }
 
   const search = document.getElementById("search");
