@@ -133,6 +133,10 @@ footer {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   color: #e4a342;
 }
+/* Override color for h2 specifically */
+.hero-section h2 {
+  color: white;
+}
 
 /* Adjusted spacing between elements */
 .hero-section h1 {
