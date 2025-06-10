@@ -81,23 +81,7 @@ a:hover {
 
 /* === New Features === */
 
-body.home-page::before {
-  content: "";
-  background: url('background_homepage_clean.png') center/cover no-repeat;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  opacity: 0.5;
-  z-index: -1;
-  animation: fadeIn 2s ease-in-out;
-}
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 0.5; }
-}
 
 .special-products {
   position: relative;
