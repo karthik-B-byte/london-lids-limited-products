@@ -230,4 +230,38 @@ footer {
     width: 90%;      /* make search box wider */
   }
 }
+.back-btn {
+  display: inline-block;
+  background-color: #e4a342;
+  color: #162029;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  font-family: Arial, sans-serif;
+  margin-bottom: 15px;
+}
+
+.back-btn:hover {
+  background-color: #c98d2f;
+  color: white;
+  cursor: pointer;
+}
+
+header {
+  position: relative;
+  padding: 20px;
+  background-color: #0e141a;
+  color: #e4a342;
+  text-align: center;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
 
