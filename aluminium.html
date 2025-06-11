@@ -5,69 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aluminium Foil Containers</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    body {
-      background-color: #0e141a;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-    h1, h2 {
-      color: #e4a342;
-      text-align: center;
-    }
-    .container {
-      padding: 20px;
-    }
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .product {
-      background-color: #1a2733;
-      padding: 15px;
-      border-radius: 8px;
-      width: 250px;
-      text-align: center;
-    }
-    .product img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-    }
-    .product h3 {
-      color: #e4a342;
-      cursor: pointer;
-    }
-    .product ul {
-      list-style-type: none;
-      padding: 0;
-      margin-top: 10px;
-      color: white;
-      display: none;
-    }
-    .product ul.show {
-      display: block;
-    }
-    footer {
-      margin-top: 40px;
-      text-align: center;
-      padding: 10px;
-      background-color: #162029;
-      color: white;
-    }
-    a.back-button {
-      color: #e4a342;
-      text-decoration: none;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-    }
-  </style>
 </head>
 <body>
   <!-- Header -->
-  <header style="position: relative; padding: 20px; background-color: #0e141a;">
+  <header>
     <a href="index.html" class="back-button">← Back</a>
     <h1>Aluminium Foil Containers</h1>
   </header>
@@ -77,7 +18,7 @@
     <div class="products">
       <div class="product">
         <img src="product_images/No.2 silver.png" alt="NO 2 Silver">
-        <h3 onclick="toggleSpecs(this)">NO 2</h3>
+        <h3>NO 2</h3>
         <ul>
           <li>Quality: Standard</li>
           <li>Dimensions: 5" x 4" x 2"</li>
@@ -86,7 +27,7 @@
       </div>
       <div class="product">
         <img src="product_images/No 6A silver brand.png" alt="NO 6A Silver">
-        <h3 onclick="toggleSpecs(this)">NO 6A</h3>
+        <h3>NO 6A</h3>
         <ul>
           <li>Quality: Standard</li>
           <li>Dimensions: 7" x 4" x 2"</li>
@@ -95,11 +36,11 @@
       </div>
     </div>
 
-    <h2 style="margin-top: 40px;">Gold Brand</h2>
+    <h2>Gold Brand</h2>
     <div class="products">
       <div class="product">
         <img src="product_images/No 1.png" alt="NO 1 Gold">
-        <h3 onclick="toggleSpecs(this)">NO 1</h3>
+        <h3>NO 1</h3>
         <ul>
           <li>Quality: Heavy</li>
           <li>Dimensions: 5" x 4" x 1.75"</li>
@@ -108,7 +49,7 @@
       </div>
       <div class="product">
         <img src="product_images/No 2.png" alt="NO 2 Gold">
-        <h3 onclick="toggleSpecs(this)">NO 2</h3>
+        <h3>NO 2</h3>
         <ul>
           <li>Quality: Heavy</li>
           <li>Dimensions: 5" x 4" x 2"</li>
@@ -117,7 +58,7 @@
       </div>
       <div class="product">
         <img src="product_images/No 6.png" alt="NO 6 Gold">
-        <h3 onclick="toggleSpecs(this)">NO 6</h3>
+        <h3>NO 6</h3>
         <ul>
           <li>Quality: Heavy</li>
           <li>Dimensions: 4.7" x 8.5" x 2.5"</li>
@@ -126,7 +67,7 @@
       </div>
       <div class="product">
         <img src="product_images/No 6A gold brand.png" alt="NO 6A Gold">
-        <h3 onclick="toggleSpecs(this)">NO 6A</h3>
+        <h3>NO 6A</h3>
         <ul>
           <li>Quality: Heavy</li>
           <li>Dimensions: 7" x 4" x 2"</li>
@@ -135,7 +76,7 @@
       </div>
       <div class="product">
         <img src="product_images/No 12.png" alt="NO 12 Gold">
-        <h3 onclick="toggleSpecs(this)">NO 12</h3>
+        <h3>NO 12</h3>
         <ul>
           <li>Quality: Heavy</li>
           <li>Dimensions: 7" Round x 1.75"</li>
@@ -144,7 +85,7 @@
       </div>
       <div class="product">
         <img src="product_images/9x9 shallow.png" alt="9×9×1.5&quot;">
-        <h3 onclick="toggleSpecs(this)">9×9×1.5" Shallow Tray</h3>
+        <h3>9×9×1.5&quot; Shallow Tray</h3>
         <ul>
           <li>Quality: Heavy</li>
           <li>Dimensions: 9" x 9" x 1.5"</li>
@@ -154,7 +95,7 @@
       </div>
       <div class="product">
         <img src="product_images/9x9 Deep.png" alt="9×9×2&quot;">
-        <h3 onclick="toggleSpecs(this)">9×9×2" Deep Tray</h3>
+        <h3>9×9×2&quot; Deep Tray</h3>
         <ul>
           <li>Quality: Heavy</li>
           <li>Dimensions: 9" x 9" x 2"</li>
@@ -164,7 +105,7 @@
       </div>
       <div class="product">
         <img src="product_images/Half Gastro gold.png" alt="Half Gastro">
-        <h3 onclick="toggleSpecs(this)">Half Gastro</h3>
+        <h3>Half Gastro</h3>
         <ul>
           <li>Quality: Heavy</li>
           <li>Dimensions: 325 x 263 x 66 mm</li>
@@ -174,7 +115,7 @@
       </div>
       <div class="product">
         <img src="product_images/Full Gastro gold.png" alt="Full Gastro">
-        <h3 onclick="toggleSpecs(this)">Full Gastro</h3>
+        <h3>Full Gastro</h3>
         <ul>
           <li>Quality: Heavy</li>
           <li>Dimensions: 525 x 325 x 79 mm</li>
@@ -192,10 +133,15 @@
   </footer>
 
   <script>
-    function toggleSpecs(header) {
-      const ul = header.nextElementSibling;
-      ul.classList.toggle('show');
-    }
+    document.querySelectorAll('.product h3').forEach(title => {
+      title.addEventListener('click', () => {
+        const specs = title.nextElementSibling;
+        if (specs && specs.tagName === 'UL') {
+          specs.classList.toggle('show');
+          title.classList.toggle('active');
+        }
+      });
+    });
   </script>
 </body>
 </html>
