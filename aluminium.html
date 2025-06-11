@@ -6,42 +6,140 @@
   <title>Aluminium Foil Containers</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    .toggle-specs-btn {
-      margin: 8px 0;
-      padding: 6px 12px;
-      background-color: #e4a342;
-      border: none;
-      color: #162029;
+    body {
+      background-color: #0e141a;
+      font-family: Arial, sans-serif;
+      color: #ddd;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header */
+    header {
+      position: relative;
+      padding: 20px;
+      background-color: #0e141a;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #e4a342;
+      text-decoration: none;
       font-weight: bold;
-      cursor: pointer;
+      font-size: 18px;
+    }
+
+    header h1 {
+      text-align: center;
+      color: #e4a342;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    h2 {
+      color: #e4a342;
+      margin-top: 40px;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .product {
+      background-color: #162029;
+      padding: 15px;
+      border-radius: 6px;
+      width: calc(50% - 25px);
+      box-sizing: border-box;
+    }
+
+    .product img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 10px;
       border-radius: 4px;
     }
 
-    .specifications {
-      margin-left: 15px;
-      color: #555;
-      font-size: 0.95em;
+    /* Clickable title styling */
+    .product h3 {
+      cursor: pointer;
+      color: #e4a342;
+      user-select: none;
+      position: relative;
+      padding-right: 20px;
+      margin-bottom: 5px;
+      font-size: 1.25em;
+    }
+
+    /* Plus sign on right */
+    .product h3::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 1;
+      transition: transform 0.3s ease;
+    }
+
+    /* When active, show minus sign */
+    .product h3.active::after {
+      content: '−';
+    }
+
+    /* Hide specs by default */
+    .product ul {
       display: none;
+      color: white;
+      margin-left: 15px;
+      font-size: 0.95em;
+      padding-left: 20px;
+      line-height: 1.4;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background-color: #0e141a;
+      color: #ddd;
+      margin-top: 40px;
+    }
+
+    footer .back-button {
+      position: static;
+      display: inline-block;
+      margin-bottom: 10px;
     }
   </style>
 </head>
 <body>
   <!-- Header -->
-  <header style="position: relative; padding: 20px; background-color: #0e141a;">
-    <a href="index.html" class="back-button" style="position: absolute; top: 20px; left: 20px;">← Back</a>
-    <h1 style="text-align: center; color: #e4a342;">Aluminium Foil Containers</h1>
+  <header>
+    <a href="index.html" class="back-button">← Back</a>
+    <h1>Aluminium Foil Containers</h1>
   </header>
 
   <div class="container">
-    <h2 style="color: #e4a342;">Silver Brand</h2>
+    <h2>Silver Brand</h2>
     <div class="products">
       <div class="product">
         <img src="product_images/No.2 silver.png" alt="NO 2 Silver" />
         <h3>NO 2</h3>
-        <button class="toggle-specs-btn">Show Specs</button>
-        <ul class="specifications">
+        <ul>
           <li>Quality: Standard</li>
-          <li>Dimensions: 5" x 4" x 2"</li>
+          <li>Dimensions: 5&quot; x 4&quot; x 2&quot;</li>
           <li>Pack Size: 1000</li>
         </ul>
       </div>
@@ -49,35 +147,31 @@
       <div class="product">
         <img src="product_images/No 6A silver brand.png" alt="NO 6A Silver" />
         <h3>NO 6A</h3>
-        <button class="toggle-specs-btn">Show Specs</button>
-        <ul class="specifications">
+        <ul>
           <li>Quality: Standard</li>
-          <li>Dimensions: 7" x 4" x 2"</li>
+          <li>Dimensions: 7&quot; x 4&quot; x 2&quot;</li>
           <li>Pack Size: 500</li>
         </ul>
       </div>
     </div>
 
-    <h2 style="color: #e4a342; margin-top: 40px;">Gold Brand</h2>
+    <h2>Gold Brand</h2>
     <div class="products">
       <div class="product">
         <img src="product_images/No 1.png" alt="NO 1 Gold" />
         <h3>NO 1</h3>
-        <button class="toggle-specs-btn">Show Specs</button>
-        <ul class="specifications">
+        <ul>
           <li>Quality: Heavy</li>
-          <li>Dimensions: 5" x 4" x 1.75"</li>
+          <li>Dimensions: 5&quot; x 4&quot; x 1.75&quot;</li>
           <li>Pack Size: 1000</li>
         </ul>
       </div>
-
       <div class="product">
         <img src="product_images/No 2.png" alt="NO 2 Gold" />
         <h3>NO 2</h3>
-        <button class="toggle-specs-btn">Show Specs</button>
-        <ul class="specifications">
+        <ul>
           <li>Quality: Heavy</li>
-          <li>Dimensions: 5" x 4" x 2"</li>
+          <li>Dimensions: 5&quot; x 4&quot; x 2&quot;</li>
           <li>Pack Size: 1000</li>
         </ul>
       </div>
@@ -85,10 +179,9 @@
       <div class="product">
         <img src="product_images/No 6.png" alt="NO 6 Gold" />
         <h3>NO 6</h3>
-        <button class="toggle-specs-btn">Show Specs</button>
-        <ul class="specifications">
+        <ul>
           <li>Quality: Heavy</li>
-          <li>Dimensions: 4.7" x 8.5" x 2.5"</li>
+          <li>Dimensions: 4.7&quot; x 8.5&quot; x 2.5&quot;</li>
           <li>Pack Size: 500</li>
         </ul>
       </div>
@@ -96,10 +189,9 @@
       <div class="product">
         <img src="product_images/No 6A gold brand.png" alt="NO 6A Gold" />
         <h3>NO 6A</h3>
-        <button class="toggle-specs-btn">Show Specs</button>
-        <ul class="specifications">
+        <ul>
           <li>Quality: Heavy</li>
-          <li>Dimensions: 7" x 4" x 2"</li>
+          <li>Dimensions: 7&quot; x 4&quot; x 2&quot;</li>
           <li>Pack Size: 500</li>
         </ul>
       </div>
@@ -107,33 +199,30 @@
       <div class="product">
         <img src="product_images/No 12.png" alt="NO 12 Gold" />
         <h3>NO 12</h3>
-        <button class="toggle-specs-btn">Show Specs</button>
-        <ul class="specifications">
+        <ul>
           <li>Quality: Heavy</li>
-          <li>Dimensions: 7" Round x 1.75"</li>
+          <li>Dimensions: 7&quot; Round x 1.75&quot;</li>
           <li>Pack Size: 400</li>
         </ul>
       </div>
 
       <div class="product">
-        <img src="product_images/9x9 shallow.png" alt='9×9×1.5"' />
-        <h3>9×9×1.5" Shallow Tray</h3>
-        <button class="toggle-specs-btn">Show Specs</button>
-        <ul class="specifications">
+        <img src="product_images/9x9 shallow.png" alt="9×9×1.5&quot;" />
+        <h3>9×9×1.5&quot; Shallow Tray</h3>
+        <ul>
           <li>Quality: Heavy</li>
-          <li>Dimensions: 9" x 9" x 1.5"</li>
+          <li>Dimensions: 9&quot; x 9&quot; x 1.5&quot;</li>
           <li>Pack Size: 200</li>
           <li>Notes: Shallow tray</li>
         </ul>
       </div>
 
       <div class="product">
-        <img src="product_images/9x9 Deep.png" alt='9×9×2"' />
-        <h3>9×9×2" Deep Tray</h3>
-        <button class="toggle-specs-btn">Show Specs</button>
-        <ul class="specifications">
+        <img src="product_images/9x9 Deep.png" alt="9×9×2&quot;" />
+        <h3>9×9×2&quot; Deep Tray</h3>
+        <ul>
           <li>Quality: Heavy</li>
-          <li>Dimensions: 9" x 9" x 2"</li>
+          <li>Dimensions: 9&quot; x 9&quot; x 2&quot;</li>
           <li>Pack Size: 200</li>
           <li>Notes: Deep tray</li>
         </ul>
@@ -142,8 +231,7 @@
       <div class="product">
         <img src="product_images/Half Gastro gold.png" alt="Half Gastro" />
         <h3>Half Gastro</h3>
-        <button class="toggle-specs-btn">Show Specs</button>
-        <ul class="specifications">
+        <ul>
           <li>Quality: Heavy</li>
           <li>Dimensions: 325 x 263 x 66 mm</li>
           <li>Pack Size: 100</li>
@@ -154,8 +242,7 @@
       <div class="product">
         <img src="product_images/Full Gastro gold.png" alt="Full Gastro" />
         <h3>Full Gastro</h3>
-        <button class="toggle-specs-btn">Show Specs</button>
-        <ul class="specifications">
+        <ul>
           <li>Quality: Heavy</li>
           <li>Dimensions: 525 x 325 x 79 mm</li>
           <li>Pack Size: 200</li>
@@ -172,18 +259,14 @@
   </footer>
 
   <script>
-    document.querySelectorAll('.toggle-specs-btn').forEach(button => {
-      button.addEventListener('click', () => {
-        const specs = button.nextElementSibling;
-        if (!specs) return;
+    document.querySelectorAll('.product h3').forEach(title => {
+      title.addEventListener('click', () => {
+        const specs = title.nextElementSibling;
+        if (!specs || specs.tagName.toLowerCase() !== 'ul') return;
 
-        if (specs.style.display === 'none' || specs.style.display === '') {
-          specs.style.display = 'block';
-          button.textContent = 'Hide Specs';
-        } else {
-          specs.style.display = 'none';
-          button.textContent = 'Show Specs';
-        }
+        const isVisible = specs.style.display === 'block';
+        specs.style.display = isVisible ? 'none' : 'block';
+        title.classList.toggle('active', !isVisible);
       });
     });
   </script>
