@@ -264,24 +264,20 @@ header {
   left: 20px;
 }
 /* === Footer === */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #0e141a;
-  color: #e4a342;
-  font-size: 1em;
-  margin-top: 40px;
-  border-top: 1px solid #162029;
-}
-
 footer a {
-  color: #e4a342;
+  display: inline-block;
+  background-color: #e4a342;
+  color: #162029;
+  padding: 10px 20px;
+  border-radius: 8px;
   text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 footer a:hover {
-  text-decoration: underline;
+  background-color: #c98d2f;
+  color: white;
 }
-
 
 
