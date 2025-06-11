@@ -197,3 +197,22 @@ footer {
   color: #e4a342;
   animation: pulse 2s infinite;
 }
+.product a h3 {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #e4a342;
+  color: #162029;
+  border-radius: 8px;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.product a h3:hover {
+  background-color: #c98d2f;
+  color: white;
+  cursor: pointer;
+}
+
