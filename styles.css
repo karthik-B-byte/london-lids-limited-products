@@ -303,5 +303,18 @@ footer .back-button {
   color: white;
   cursor: pointer;
 }
+.product-heading {
+  display: inline-block;
+  background: #e4a342;
+  color: white;
+  padding: 0.4rem 1.2rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  margin: 2rem auto 1rem;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
 
 
