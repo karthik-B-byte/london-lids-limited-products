@@ -303,3 +303,48 @@ footer .back-button {
   color: white;
   cursor: pointer;
 }
+/* === Product Title (Toggle) === */
+.product h3 {
+  text-align: center;
+  width: 100%;
+  margin: 10px 0 8px;
+  background-color: transparent;
+  color: #e4a342;
+  font-size: 1em;
+  padding: 10px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.product h3:hover {
+  background-color: rgba(228, 163, 66, 0.1);
+}
+
+/* Optional dropdown indicator ▼ */
+.product h3::after {
+  content: '▼';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+.product h3.active::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* === Specs (UL) Styling === */
+.product ul {
+  display: none;
+  color: white !important;
+  margin-top: 8px;
+}
+
+.product ul.show {
+  display: block;
+}
+
