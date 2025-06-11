@@ -5,15 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>London Lids Ltd</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    .menu-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: #e4a342;
+      margin: 5px 0;
+    }
+
+    nav {
+      position: fixed;
+      left: -250px;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      background-color: #1a2733;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 9;
+    }
+
+    nav a {
+      padding: 12px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+    }
+
+    nav a:hover {
+      background-color: #e4a342;
+      color: #162029;
+    }
+
+    nav.active {
+      left: 0;
+    }
+  </style>
 </head>
+
 <body class="home-page">
 
+  <!-- ☰ Hamburger Icon -->
   <div class="menu-toggle" onclick="toggleMenu()">
     <div></div>
     <div></div>
     <div></div>
   </div>
 
+  <!-- Sidebar Navigation -->
   <nav id="sidebar">
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
@@ -22,70 +71,76 @@
     <a href="Product Catalog Presentation RD.pdf" download>Download Catalog</a>
   </nav>
 
+  <!-- Overlay for closing sidebar -->
   <div id="overlay" onclick="closeMenu()"></div>
 
-  <header>
-    <div class="hero-section">
-      <img src="logo.png" alt="London Lids Logo" class="logo" />
-      <h1>London Lids Ltd</h1>
-      <h2>Manufacturers & Suppliers of All Catering Disposables</h2>
-      <h3>A Trusted Family Company In Food Packaging For Over 20 Years</h3>
-      <input type="text" id="search" placeholder="Search categories..." />
-    </div>
-  </header>
+  <!-- Header Section -->
+<header>
+  <div class="hero-section">
+    <img src="logo.png" alt="London Lids Logo" class="logo" />
+    <h1>London Lids Ltd</h1>
+    <h2>Manufacturers & Suppliers of All Catering Disposables</h2>
+    <h3>A Trusted Family Company In Food Packaging For Over 20 Years</h3>
+    <input type="text" id="search" placeholder="Search categories..." />
+  </div>
+</header>
 
+
+  <!-- Main Product Section -->
   <main class="container">
     <div id="product-list" class="products">
       <div class="product">
         <a href="aluminium.html">
           <img src="product_images/aluminium-category.png" />
-          <h3 class="btn-like">Aluminium</h3>
+          <h3>Aluminium</h3>
         </a>
       </div>
       <div class="product">
         <a href="plastic.html">
           <img src="product_images/plastic-category.png" />
-          <h3 class="btn-like">Plastic</h3>
+          <h3>Plastic</h3>
         </a>
       </div>
       <div class="product">
         <a href="bagasse.html">
           <img src="product_images/bagasse-category.png" />
-          <h3 class="btn-like">Bagasse</h3>
+          <h3>Bagasse</h3>
         </a>
       </div>
       <div class="product">
         <a href="paper.html">
           <img src="product_images/paper-category.png" />
-          <h3 class="btn-like">Paper & Bags</h3>
+          <h3>Paper & Bags</h3>
         </a>
       </div>
       <div class="product">
         <a href="napkins.html">
           <img src="product_images/napkin-category.png" />
-          <h3 class="btn-like">Napkins & Rolls</h3>
+          <h3>Napkins & Rolls</h3>
         </a>
       </div>
       <div class="product">
         <a href="lids.html">
           <img src="product_images/lids-category.png" />
-          <h3 class="btn-like">Lids</h3>
+          <h3>Lids</h3>
         </a>
       </div>
       <div class="product">
         <a href="foil.html">
           <img src="product_images/foil-category.png" />
-          <h3 class="btn-like">Foil & Cling Film</h3>
+          <h3>Foil & Cling Film</h3>
         </a>
       </div>
     </div>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p><a href="contact.html">Contact Us</a></p>
     <p>&copy; 2025 London Lids Ltd. All rights reserved.</p>
   </footer>
 
+  <!-- Scripts -->
   <script>
     function toggleMenu() {
       const sidebar = document.getElementById('sidebar');
