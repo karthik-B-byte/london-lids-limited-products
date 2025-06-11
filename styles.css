@@ -264,14 +264,15 @@ header {
   left: 20px;
 }
 /* === Footer === */
+/* === Footer === */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #0e141a; /* Same as header background */
-  color: #e4a342; /* Same accent color as header text */
+  background-color: #0e141a;
+  color: #e4a342;
   font-size: 1em;
   margin-top: 40px;
-  border-top: 1px solid #162029; /* subtle border */
+  border-top: 1px solid #162029;
 }
 
 footer a {
@@ -282,5 +283,6 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
+
 
 
