@@ -1,120 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Aluminium Foil Containers</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .toggle-specs-btn {
+      margin: 8px 0;
+      padding: 6px 12px;
+      background-color: #e4a342;
+      border: none;
+      color: #162029;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .specifications {
+      margin-left: 15px;
+      color: #555;
+      font-size: 0.95em;
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
-<header style="position: relative; padding: 20px; background-color: #0e141a;">
-  <a href="index.html" class="back-button" style="position: absolute; top: 20px; left: 20px;">← Back</a>
-  <h1 style="text-align: center; color: #e4a342;">Aluminium Foil Containers</h1>
-</header>
+  <header style="position: relative; padding: 20px; background-color: #0e141a;">
+    <a href="index.html" class="back-button" style="position: absolute; top: 20px; left: 20px;">← Back</a>
+    <h1 style="text-align: center; color: #e4a342;">Aluminium Foil Containers</h1>
+  </header>
 
   <div class="container">
     <h2 style="color: #e4a342;">Silver Brand</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/No.2 silver.png" alt="NO 2 Silver">
+        <img src="product_images/No.2 silver.png" alt="NO 2 Silver" />
         <h3>NO 2</h3>
-        <ul>
+        <button class="toggle-specs-btn">Show Specs</button>
+        <ul class="specifications">
           <li>Quality: Standard</li>
-          <li>Dimensions: 5&quot; x 4&quot; x 2&quot;</li>
+          <li>Dimensions: 5" x 4" x 2"</li>
           <li>Pack Size: 1000</li>
         </ul>
       </div>
 
       <div class="product">
-        <img src="product_images/No 6A silver brand.png" alt="NO 6A Silver">
+        <img src="product_images/No 6A silver brand.png" alt="NO 6A Silver" />
         <h3>NO 6A</h3>
-        <ul>
+        <button class="toggle-specs-btn">Show Specs</button>
+        <ul class="specifications">
           <li>Quality: Standard</li>
-          <li>Dimensions: 7&quot; x 4&quot; x 2&quot;</li>
+          <li>Dimensions: 7" x 4" x 2"</li>
           <li>Pack Size: 500</li>
         </ul>
       </div>
     </div>
 
-    <h2 style="color: #e4a342;"margin-top: 40px;">Gold Brand</h2>
+    <h2 style="color: #e4a342; margin-top: 40px;">Gold Brand</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/No 1.png" alt="NO 1 Gold">
+        <img src="product_images/No 1.png" alt="NO 1 Gold" />
         <h3>NO 1</h3>
-        <ul>
+        <button class="toggle-specs-btn">Show Specs</button>
+        <ul class="specifications">
           <li>Quality: Heavy</li>
-          <li>Dimensions: 5&quot; x 4&quot; x 1.75&quot;</li>
+          <li>Dimensions: 5" x 4" x 1.75"</li>
           <li>Pack Size: 1000</li>
         </ul>
       </div>
+
       <div class="product">
-        <img src="product_images/No 2.png" alt="NO 2 Gold">
+        <img src="product_images/No 2.png" alt="NO 2 Gold" />
         <h3>NO 2</h3>
-        <ul>
+        <button class="toggle-specs-btn">Show Specs</button>
+        <ul class="specifications">
           <li>Quality: Heavy</li>
-          <li>Dimensions: 5&quot; x 4&quot; x 2&quot;</li>
+          <li>Dimensions: 5" x 4" x 2"</li>
           <li>Pack Size: 1000</li>
         </ul>
       </div>
 
-
       <div class="product">
-        <img src="product_images/No 6.png" alt="NO 6 Gold">
+        <img src="product_images/No 6.png" alt="NO 6 Gold" />
         <h3>NO 6</h3>
-        <ul>
+        <button class="toggle-specs-btn">Show Specs</button>
+        <ul class="specifications">
           <li>Quality: Heavy</li>
-          <li>Dimensions: 4.7&quot; x 8.5&quot; x 2.5&quot;</li>
+          <li>Dimensions: 4.7" x 8.5" x 2.5"</li>
           <li>Pack Size: 500</li>
         </ul>
       </div>
 
       <div class="product">
-        <img src="product_images/No 6A gold brand.png" alt="NO 6A Gold">
+        <img src="product_images/No 6A gold brand.png" alt="NO 6A Gold" />
         <h3>NO 6A</h3>
-        <ul>
+        <button class="toggle-specs-btn">Show Specs</button>
+        <ul class="specifications">
           <li>Quality: Heavy</li>
-          <li>Dimensions: 7&quot; x 4&quot; x 2&quot;</li>
+          <li>Dimensions: 7" x 4" x 2"</li>
           <li>Pack Size: 500</li>
         </ul>
       </div>
 
       <div class="product">
-        <img src="product_images/No 12.png" alt="NO 12 Gold">
+        <img src="product_images/No 12.png" alt="NO 12 Gold" />
         <h3>NO 12</h3>
-        <ul>
+        <button class="toggle-specs-btn">Show Specs</button>
+        <ul class="specifications">
           <li>Quality: Heavy</li>
-          <li>Dimensions: 7&quot; Round x 1.75&quot;</li>
+          <li>Dimensions: 7" Round x 1.75"</li>
           <li>Pack Size: 400</li>
         </ul>
       </div>
 
       <div class="product">
-        <img src="product_images/9x9 shallow.png" alt="9×9×1.5&quot;">
-        <h3>9×9×1.5&quot; Shallow Tray</h3>
-        <ul>
+        <img src="product_images/9x9 shallow.png" alt='9×9×1.5"' />
+        <h3>9×9×1.5" Shallow Tray</h3>
+        <button class="toggle-specs-btn">Show Specs</button>
+        <ul class="specifications">
           <li>Quality: Heavy</li>
-          <li>Dimensions: 9&quot; x 9&quot; x 1.5&quot;</li>
+          <li>Dimensions: 9" x 9" x 1.5"</li>
           <li>Pack Size: 200</li>
           <li>Notes: Shallow tray</li>
         </ul>
       </div>
 
       <div class="product">
-        <img src="product_images/9x9 Deep.png" alt="9×9×2&quot;">
-        <h3>9×9×2&quot; Deep Tray</h3>
-        <ul>
+        <img src="product_images/9x9 Deep.png" alt='9×9×2"' />
+        <h3>9×9×2" Deep Tray</h3>
+        <button class="toggle-specs-btn">Show Specs</button>
+        <ul class="specifications">
           <li>Quality: Heavy</li>
-          <li>Dimensions: 9&quot; x 9&quot; x 2&quot;</li>
+          <li>Dimensions: 9" x 9" x 2"</li>
           <li>Pack Size: 200</li>
           <li>Notes: Deep tray</li>
         </ul>
       </div>
 
       <div class="product">
-        <img src="product_images/Half Gastro gold.png" alt="Half Gastro">
+        <img src="product_images/Half Gastro gold.png" alt="Half Gastro" />
         <h3>Half Gastro</h3>
-        <ul>
+        <button class="toggle-specs-btn">Show Specs</button>
+        <ul class="specifications">
           <li>Quality: Heavy</li>
           <li>Dimensions: 325 x 263 x 66 mm</li>
           <li>Pack Size: 100</li>
@@ -123,9 +152,10 @@
       </div>
 
       <div class="product">
-        <img src="product_images/Full Gastro gold.png" alt="Full Gastro">
+        <img src="product_images/Full Gastro gold.png" alt="Full Gastro" />
         <h3>Full Gastro</h3>
-        <ul>
+        <button class="toggle-specs-btn">Show Specs</button>
+        <ul class="specifications">
           <li>Quality: Heavy</li>
           <li>Dimensions: 525 x 325 x 79 mm</li>
           <li>Pack Size: 200</li>
@@ -135,12 +165,27 @@
     </div>
   </div>
 
-<!-- Footer -->
-<footer>
-  <a href="index.html" class="back-button">← Back to Home</a>
-  <p>&copy; 2025 London Lids Ltd. All rights reserved.</p>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <a href="index.html" class="back-button">← Back to Home</a>
+    <p>&copy; 2025 London Lids Ltd. All rights reserved.</p>
+  </footer>
 
+  <script>
+    document.querySelectorAll('.toggle-specs-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const specs = button.nextElementSibling;
+        if (!specs) return;
 
+        if (specs.style.display === 'none' || specs.style.display === '') {
+          specs.style.display = 'block';
+          button.textContent = 'Hide Specs';
+        } else {
+          specs.style.display = 'none';
+          button.textContent = 'Show Specs';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
