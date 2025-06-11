@@ -140,19 +140,6 @@
   <a href="index.html" class="back-button">← Back to Home</a>
   <p>&copy; 2025 London Lids Ltd. All rights reserved.</p>
 </footer>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll(".toggle-specs");
-
-    buttons.forEach(button => {
-      button.addEventListener("click", () => {
-        const specs = button.nextElementSibling;
-        specs.classList.toggle("hidden");
-        button.textContent = specs.classList.contains("hidden") ? "Show Specs" : "Hide Specs";
-      });
-    });
-  });
-</script>
 
 
 </body>
