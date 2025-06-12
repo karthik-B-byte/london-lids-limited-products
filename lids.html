@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lids</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Make image and title clickable with pointer cursor */
+    .product h3, .product img {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -14,13 +20,13 @@
 
   <div class="container">
 
-    <h2 style="color: #e4a342;">Paper & Poly Lids</h2>
+    <h2 style="color: #e4a342;">Paper &amp; Poly Lids</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/lids paper poly.png" alt="Paper & Poly Lids">
-        <h3>Paper & Poly Lids</h3>
-        <ul>
-          <li>Types: Standard & Heavy</li>
+        <img src="product_images/lids paper poly.png" alt="Paper & Poly Lids" />
+        <h3>Paper &amp; Poly Lids</h3>
+        <ul class="specs" style="display:none;">
+          <li>Types: Standard &amp; Heavy</li>
           <li>Sizes: No. 1, No. 2, 6A, 9", No. 6, No. 12</li>
         </ul>
       </div>
@@ -29,9 +35,9 @@
     <h2 style="color: #e4a342;">Hood Lids</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/lids hood.png" alt="Hood Lids">
+        <img src="product_images/lids hood.png" alt="Hood Lids" />
         <h3>Hood Lids</h3>
-        <ul>
+        <ul class="specs" style="display:none;">
           <li>For Aluminium Containers</li>
         </ul>
       </div>
@@ -40,7 +46,28 @@
   </div>
 
   <footer>
-<p><a href="index.html">← Back to Home</a></p>
-<p>&copy; 2025 London Lids Ltd. All rights reserved.</p></footer>
+    <p><a href="index.html">← Back to Home</a></p>
+    <p>&copy; 2025 London Lids Ltd. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Toggle specs visibility on clicking image or title
+    document.querySelectorAll('.product').forEach(product => {
+      const img = product.querySelector('img');
+      const title = product.querySelector('h3');
+      const specs = product.querySelector('.specs');
+
+      function toggleSpecs() {
+        if (specs.style.display === 'none' || specs.style.display === '') {
+          specs.style.display = 'block';
+        } else {
+          specs.style.display = 'none';
+        }
+      }
+
+      img.addEventListener('click', toggleSpecs);
+      title.addEventListener('click', toggleSpecs);
+    });
+  </script>
 </body>
 </html>
