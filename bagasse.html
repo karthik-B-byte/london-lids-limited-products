@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bagasse Products</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Cursor pointer for clickable h3 and images */
+    .product h3, .product img {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -17,9 +23,9 @@
     <h2 style="color: #e4a342;">Bowls</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/8oz bowl.png" alt="Bagasse Bowl">
+        <img src="product_images/8oz bowl.png" alt="Bagasse Bowl" />
         <h3>Bagasse Bowl</h3>
-        <ul>
+        <ul class="specs" style="display:none;">
           <li>Size: 8oz (240ml)</li>
           <li>Pack Size: 1500 pcs</li>
         </ul>
@@ -29,62 +35,80 @@
     <h2 style="color: #e4a342;">Plates</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/9in plate.png" alt="9 inch Plate">
+        <img src="product_images/9in plate.png" alt="9 inch Plate" />
         <h3>9" Round Plate</h3>
-        <ul><li>Pack Size: 500 pcs</li></ul>
+        <ul class="specs" style="display:none;">
+          <li>Pack Size: 500 pcs</li>
+        </ul>
       </div>
       <div class="product">
-        <img src="product_images/10in plate.png" alt="10 inch Plate">
+        <img src="product_images/10in plate.png" alt="10 inch Plate" />
         <h3>10" Round Plate</h3>
-        <ul><li>Pack Size: 500 pcs</li></ul>
+        <ul class="specs" style="display:none;">
+          <li>Pack Size: 500 pcs</li>
+        </ul>
       </div>
       <div class="product">
-        <img src="product_images/12oz plate.png" alt="12oz Plate">
+        <img src="product_images/12oz plate.png" alt="12oz Plate" />
         <h3>12oz Plate</h3>
-        <ul><li>Pack Size: 500 pcs</li></ul>
+        <ul class="specs" style="display:none;">
+          <li>Pack Size: 500 pcs</li>
+        </ul>
       </div>
       <div class="product">
-        <img src="product_images/12in 4comp plate.png" alt="4 Compartment Plate">
+        <img src="product_images/12in 4comp plate.png" alt="4 Compartment Plate" />
         <h3>12" 4-Compartment Plate</h3>
-        <ul><li>Pack Size: 500 pcs</li></ul>
+        <ul class="specs" style="display:none;">
+          <li>Pack Size: 500 pcs</li>
+        </ul>
       </div>
       <div class="product">
-        <img src="product_images/7comp plate.png" alt="7 Compartment Plate">
+        <img src="product_images/7comp plate.png" alt="7 Compartment Plate" />
         <h3>7-Compartment Round Plate</h3>
-        <ul><li>Pack Size: 200 pcs</li></ul>
+        <ul class="specs" style="display:none;">
+          <li>Pack Size: 200 pcs</li>
+        </ul>
       </div>
       <div class="product">
-        <img src="product_images/6comp plate.png" alt="6 Compartment Plate">
+        <img src="product_images/6comp plate.png" alt="6 Compartment Plate" />
         <h3>6-Compartment Round Plate</h3>
-        <ul><li>Pack Size: 250 pcs</li></ul>
+        <ul class="specs" style="display:none;">
+          <li>Pack Size: 250 pcs</li>
+        </ul>
       </div>
     </div>
 
     <h2 style="color: #e4a342;">Clamshell Boxes</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/6x6 clamshell.png" alt="6x6 Box">
+        <img src="product_images/6x6 clamshell.png" alt="6x6 Box" />
         <h3>6" x 6" Clamshell</h3>
-        <ul><li>Pack Size: 200 pcs</li></ul>
+        <ul class="specs" style="display:none;">
+          <li>Pack Size: 200 pcs</li>
+        </ul>
       </div>
       <div class="product">
-        <img src="product_images/7x5 clamshell.png" alt="7x5 Box">
+        <img src="product_images/7x5 clamshell.png" alt="7x5 Box" />
         <h3>7" x 5" Clamshell</h3>
-        <ul><li>Pack Size: 200 pcs</li></ul>
+        <ul class="specs" style="display:none;">
+          <li>Pack Size: 200 pcs</li>
+        </ul>
       </div>
       <div class="product">
-        <img src="product_images/9x6 clamshell.png" alt="9x6 Box">
+        <img src="product_images/9x6 clamshell.png" alt="9x6 Box" />
         <h3>9" x 6" Clamshell</h3>
-        <ul><li>Pack Size: 200 pcs</li></ul>
+        <ul class="specs" style="display:none;">
+          <li>Pack Size: 200 pcs</li>
+        </ul>
       </div>
     </div>
 
     <h2 style="color: #e4a342;">Straws</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/straws.png" alt="Straws">
+        <img src="product_images/straws.png" alt="Straws" />
         <h3>Bagasse Straws</h3>
-        <ul>
+        <ul class="specs" style="display:none;">
           <li>Sizes: 6mm, 8mm, 10mm</li>
           <li>Pack Size: 5000 pcs each</li>
         </ul>
@@ -94,7 +118,28 @@
   </div>
 
   <footer>
-<p><a href="index.html">← Back to Home</a></p>
-<p>&copy; 2025 London Lids Ltd. All rights reserved.</p></footer>
+    <p><a href="index.html">← Back to Home</a></p>
+    <p>&copy; 2025 London Lids Ltd. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Accordion toggle for specs on image or title click
+    document.querySelectorAll('.product').forEach(product => {
+      const img = product.querySelector('img');
+      const title = product.querySelector('h3');
+      const specs = product.querySelector('.specs');
+
+      function toggleSpecs() {
+        if (specs.style.display === 'none' || specs.style.display === '') {
+          specs.style.display = 'block';
+        } else {
+          specs.style.display = 'none';
+        }
+      }
+
+      img.addEventListener('click', toggleSpecs);
+      title.addEventListener('click', toggleSpecs);
+    });
+  </script>
 </body>
 </html>
