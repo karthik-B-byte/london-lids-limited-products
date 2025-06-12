@@ -12,15 +12,20 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:focus {
   text-decoration: underline;
+  outline: none;
 }
 
 /* === Header Section === */
 header {
+  position: relative;
   text-align: center;
-  padding: 20px;
+  padding: 20px 15px;
   background-color: #0e141a;
+  color: #e4a342;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -32,32 +37,79 @@ header {
 h1 {
   color: #e4a342;
   font-size: 2em;
+  margin: 0;
 }
 
 h3 {
   color: #e4a342;
   font-size: 1em;
+  margin: 0;
 }
 
 input[type="text"] {
   width: 60%;
+  max-width: 400px;
   padding: 10px;
   margin-top: 15px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* === Back Button === */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: inline-block;
+  background-color: #e4a342;
+  color: #162029;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+.back-btn:hover,
+.back-btn:focus {
+  background-color: #c98d2f;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.back-btn:focus {
+  outline: 3px solid #e4a342;
+  outline-offset: 2px;
 }
 
 /* === Main Content === */
 .container {
-  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 15px;
+  box-sizing: border-box;
 }
 
+h2 {
+  text-align: center;
+  color: #e4a342;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  font-size: 1.8em;
+}
+
+/* === Products Grid === */
 .products {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  align-items: stretch;
 }
 
 .product {
@@ -66,21 +118,72 @@ input[type="text"] {
   padding: 16px;
   width: 280px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+  box-sizing: border-box;
 }
 
 .product img {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 10px;
+  object-fit: contain;
+  aspect-ratio: 4 / 3;
+}
+
+.product h3 {
+  text-align: center;
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 10px;
+  background-color: #e4a342;
+  color: #162029;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.product h3:hover,
+.product h3:focus {
+  background-color: #c98d2f;
+  color: white;
+  outline: none;
 }
 
 /* === Footer === */
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 20px 15px;
   background-color: #0e141a;
   color: white;
   margin-top: 40px;
+  box-sizing: border-box;
+}
+
+footer a {
+  display: inline-block;
+  background-color: #e4a342;
+  color: #162029;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+footer a:hover,
+footer a:focus {
+  background-color: #c98d2f;
+  color: white;
+  outline: none;
+}
+
+footer a:focus {
+  outline: 3px solid #e4a342;
+  outline-offset: 2px;
 }
 
 /* === Sidebar Overlay === */
@@ -98,6 +201,7 @@ footer {
 #overlay.active {
   display: block;
 }
+
 /* === Hero Section === */
 .hero-section {
   position: relative;
@@ -113,6 +217,7 @@ footer {
   opacity: 0.5;
   overflow: hidden;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .hero-section::before {
@@ -133,7 +238,7 @@ footer {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   color: #e4a342;
 }
-/* Override color for h2 specifically */
+
 .hero-section h2 {
   color: white;
 }
@@ -164,8 +269,9 @@ footer {
   border: none;
   font-size: 16px;
   width: 300px;
+  max-width: 90vw;
+  box-sizing: border-box;
 }
-
 
 /* === Animations === */
 @keyframes fadeIn {
@@ -198,115 +304,35 @@ footer {
   animation: pulse 2s infinite;
 }
 
-/* — Responsive adjustments — */
+/* === Responsive adjustments === */
 @media (max-width: 768px) {
+  .container {
+    padding: 15px 10px;
+  }
+  
   .products {
     flex-direction: column;
     align-items: center;
   }
 
   .product {
-    width: 90%;      /* make product cards full-width on mobile */
+    width: 100%;
+    max-width: 400px;
+    min-height: auto; /* Let height adjust to content on mobile */
   }
 
   input[type="text"] {
-    width: 90%;      /* make search box wider */
+    width: 100%;
+  }
+
+  .back-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 999;
+  }
+
+  header {
+    padding-top: 60px; /* space for fixed back button */
   }
 }
-.back-btn {
-  display: inline-block;
-  background-color: #e4a342;
-  color: #162029;
-  padding: 8px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease;
-  font-family: Arial, sans-serif;
-  margin-bottom: 15px;
-}
-
-.back-btn:hover {
-  background-color: #c98d2f;
-  color: white;
-  cursor: pointer;
-}
-
-header {
-  position: relative;
-  padding: 20px;
-  background-color: #0e141a;
-  color: #e4a342;
-  text-align: center;
-}
-
-.back-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-/* === Footer === */
-footer a {
-  display: inline-block;
-  background-color: #e4a342;
-  color: #162029;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-footer a:hover {
-  background-color: #c98d2f;
-  color: white;
-}
-/* --- Back Button Styling --- */
-.back-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #e4a342;
-  color: #162029;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.back-button:hover {
-  background-color: #c98d2f;
-  color: white;
-}
-
-/* --- Centering footer button --- */
-footer .back-button {
-  display: inline-block;
-  margin: 10px auto;
-}
-
-/* --- Product card h3 styled as full-width buttons --- */
-.product h3 {
-  text-align: center;
-  width: 100%;
-  padding: 12px 0;
-  margin-top: 10px;
-  background-color: #e4a342;
-  color: #162029;
-  border-radius: 6px;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
-}
-
-.product h3:hover {
-  background-color: #c98d2f;
-  color: white;
-  cursor: pointer;
-}
-
-
-/* Center product type headings */
-h2 {
-  text-align: center;
-}
-
