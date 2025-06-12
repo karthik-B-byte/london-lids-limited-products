@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Foil & Cling Film</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Cursor pointer for clickable h3 and images */
+    .product h3, .product img {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -17,9 +23,9 @@
     <h2 style="color: #e4a342;">Foil Rolls</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/foil roll.png" alt="Foil Rolls">
+        <img src="product_images/foil roll.png" alt="Foil Rolls" />
         <h3>Foil Rolls</h3>
-        <ul>
+        <ul class="specs" style="display:none;">
           <li>Sizes: 450mm x 75m, 300mm x 75m</li>
           <li>Pack: Box of 6</li>
         </ul>
@@ -29,9 +35,9 @@
     <h2 style="color: #e4a342;">Cling Film</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/cling film.png" alt="Cling Film">
+        <img src="product_images/cling film.png" alt="Cling Film" />
         <h3>Cling Film</h3>
-        <ul>
+        <ul class="specs" style="display:none;">
           <li>Sizes: 450mm x 300m, 300mm x 300m</li>
           <li>Pack: Box of 6</li>
         </ul>
@@ -40,7 +46,29 @@
 
   </div>
 
-  <footer><p><a href="index.html">← Back to Home</a></p></p>
-<p>&copy; 2025 London Lids Ltd. All rights reserved.</p></footer>
+  <footer>
+    <p><a href="index.html">← Back to Home</a></p>
+    <p>&copy; 2025 London Lids Ltd. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Accordion toggle for specs on image or title click
+    document.querySelectorAll('.product').forEach(product => {
+      const img = product.querySelector('img');
+      const title = product.querySelector('h3');
+      const specs = product.querySelector('.specs');
+
+      function toggleSpecs() {
+        if (specs.style.display === 'none' || specs.style.display === '') {
+          specs.style.display = 'block';
+        } else {
+          specs.style.display = 'none';
+        }
+      }
+
+      img.addEventListener('click', toggleSpecs);
+      title.addEventListener('click', toggleSpecs);
+    });
+  </script>
 </body>
 </html>
