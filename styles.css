@@ -5,44 +5,55 @@ body {
   color: white;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 a {
   color: #e4a342;
   text-decoration: none;
 }
-a:hover,
-a:focus {
+a:hover {
   text-decoration: underline;
-  outline: 2px solid #fff;
-  outline-offset: 2px;
 }
 
 /* === Header Section === */
 header {
   position: relative;
-  text-align: center;
-  padding: 20px;
   background-color: #0e141a;
-  color: #e4a342;
+  padding: 60px 20px 20px;
+  text-align: center;
 }
 .logo {
   width: 150px;
-  display: block;
   margin: 0 auto 10px;
+}
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #e4a342;
+  color: #162029;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.back-btn:hover {
+  background-color: #c98d2f;
+  color: white;
 }
 h1 {
   color: #e4a342;
-  font-size: 2rem;
+  font-size: 2em;
   margin: 10px 0 5px;
 }
 h2 {
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   margin: 5px 0;
 }
 h3 {
   color: #e4a342;
-  font-size: 1rem;
+  font-size: 1em;
   margin: 5px 0 15px;
 }
 input[type="text"] {
@@ -56,19 +67,14 @@ input[type="text"] {
 
 /* === Hero Section === */
 .hero-section {
-  position: relative;
-  height: 400px;
   background-image: url('product_images/background_homepage_clean.png');
   background-size: cover;
   background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 60px 20px;
   animation: fadeIn 1.5s ease-in forwards;
   opacity: 0.5;
   text-align: center;
-  overflow: hidden;
+  position: relative;
 }
 .hero-section::before {
   content: "";
@@ -125,9 +131,8 @@ footer {
   padding: 20px;
   background-color: #0e141a;
   color: white;
-  margin-top: 40px;
 }
-footer a {
+footer a.back-button {
   display: inline-block;
   background-color: #e4a342;
   color: #162029;
@@ -135,29 +140,13 @@ footer a {
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease;
 }
-footer a:hover {
+footer a.back-button:hover {
   background-color: #c98d2f;
   color: white;
 }
 
-/* === Overlay === */
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: none;
-  z-index: 8;
-}
-#overlay.active {
-  display: block;
-}
-
-/* === Sidebar === */
+/* === Sidebar Navigation === */
 .menu-toggle {
   position: absolute;
   top: 20px;
@@ -171,43 +160,55 @@ footer a:hover {
   background-color: #e4a342;
   margin: 5px 0;
 }
-nav {
+#sidebar {
   position: fixed;
-  left: -250px;
   top: 0;
+  left: -250px;
   width: 250px;
   height: 100%;
   background-color: #1a2733;
-  overflow-x: hidden;
-  transition: 0.3s;
   padding-top: 60px;
-  z-index: 9;
+  transition: 0.3s ease;
+  z-index: 11;
 }
-nav.active {
+#sidebar.active {
   left: 0;
 }
-nav a {
-  padding: 12px 20px;
-  text-decoration: none;
-  font-size: 18px;
-  color: white;
+#sidebar a {
   display: block;
+  padding: 12px 20px;
+  color: white;
 }
-nav a:hover {
+#sidebar a:hover {
   background-color: #e4a342;
   color: #162029;
+}
+.close-link {
+  font-size: 24px;
+  text-align: right;
+  display: block;
+  padding: 12px 20px;
+}
+
+/* === Overlay === */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+#overlay.active {
+  display: block;
 }
 
 /* === Animations === */
 @keyframes fadeIn {
-  from {
-    opacity: 0.5;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0.5; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 @keyframes pulse {
   0%, 100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); }
@@ -215,26 +216,26 @@ nav a:hover {
 }
 .special-products {
   animation: pulse 2s infinite;
-  color: #e4a342;
 }
 
 /* === Responsive === */
 @media (max-width: 768px) {
   .products {
     grid-template-columns: 1fr;
-    padding: 10px;
   }
-
+  .hero-section {
+    padding: 40px 10px;
+    height: auto;
+  }
   input[type="text"] {
     width: 90%;
   }
-
-  .product {
-    width: 100%;
-  }
-
   .menu-toggle {
     top: 15px;
     left: 15px;
+  }
+  .back-btn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
   }
 }
