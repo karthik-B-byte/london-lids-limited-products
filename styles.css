@@ -304,46 +304,6 @@ footer .back-button {
   cursor: pointer;
 }
 
-/* Button styling */
-.product h3 {
-  margin: 0;
-}
-
-.product h3 button {
-  width: 100%;
-  background: #e4a342;
-  color: #162029;
-  border: none;
-  padding: 12px;
-  font-size: 18px;
-  text-align: center;
-  cursor: pointer;
-  display: block;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.product h3 button:hover {
-  background-color: #cf8d2e;
-  transform: scale(1.02);
-}
-
-/* Hide specs initially */
-.product ul {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-out, padding 0.3s ease;
-  margin-top: 0;
-  padding: 0 10px;
-}
-
-/* Show specs when active */
-.product.active ul {
-  max-height: 500px; /* Large enough to reveal all content */
-  margin-top: 10px;
-  padding: 10px;
-}
-
 
 /* Center product type headings */
 h2 {
