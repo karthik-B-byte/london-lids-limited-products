@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>London Lids Ltd</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -10,7 +10,9 @@
 
   <!-- ☰ Hamburger Icon -->
   <div class="menu-toggle" onclick="toggleMenu()">
-    <div></div><div></div><div></div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 
   <!-- Sidebar Navigation -->
@@ -22,40 +24,78 @@
     <a href="Product Catalog Presentation RD.pdf" download>Download Catalog</a>
   </nav>
 
-  <!-- Overlay -->
+  <!-- Overlay for closing sidebar -->
   <div id="overlay" onclick="closeMenu()"></div>
 
-  <!-- Hero Section with Slideshow -->
+  <!-- Header Section -->
   <header>
-    <div class="hero-slideshow">
-      <div class="slide active" style="background-image: url('product_images/slide1.jpg')"></div>
-      <div class="slide" style="background-image: url('product_images/slide2.jpg')"></div>
-      <div class="slide" style="background-image: url('product_images/slide3.jpg')"></div>
+    <div class="hero-section slider">
+      <div class="slide active" style="background-image:url('product_images/background1.png')"></div>
+      <div class="slide" style="background-image:url('product_images/background2.png')"></div>
+      <div class="slide" style="background-image:url('product_images/background3.png')"></div>
+
       <div class="hero-content">
         <img src="logo.png" alt="London Lids Logo" class="logo" />
         <h1>London Lids Ltd</h1>
         <h2>Manufacturers & Suppliers of All Catering Disposables</h2>
         <h3>A Trusted Family Company In Food Packaging For Over 20 Years</h3>
         <input type="text" id="search" placeholder="Search categories..." />
-        <div class="dots">
-          <span class="dot active"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-        </div>
+      </div>
+
+      <div class="dots">
+        <span class="dot active" onclick="setSlide(0)"></span>
+        <span class="dot" onclick="setSlide(1)"></span>
+        <span class="dot" onclick="setSlide(2)"></span>
       </div>
     </div>
   </header>
 
-  <!-- Product Cards -->
+  <!-- Main Product Section -->
   <main class="container">
     <div id="product-list" class="products">
-      <div class="product"><a href="aluminium.html"><img src="product_images/aluminium-category.png" /><h3>Aluminium</h3></a></div>
-      <div class="product"><a href="plastic.html"><img src="product_images/plastic-category.png" /><h3>Plastic</h3></a></div>
-      <div class="product"><a href="bagasse.html"><img src="product_images/bagasse-category.png" /><h3>Bagasse</h3></a></div>
-      <div class="product"><a href="paper.html"><img src="product_images/paper-category.png" /><h3>Paper & Bags</h3></a></div>
-      <div class="product"><a href="napkins.html"><img src="product_images/napkin-category.png" /><h3>Napkins & Rolls</h3></a></div>
-      <div class="product"><a href="lids.html"><img src="product_images/lids-category.png" /><h3>Lids</h3></a></div>
-      <div class="product"><a href="foil.html"><img src="product_images/foil-category.png" /><h3>Foil & Cling Film</h3></a></div>
+      <!-- Repeat your product cards here -->
+      <div class="product">
+        <a href="aluminium.html">
+          <img src="product_images/aluminium-category.png" alt="Aluminium" />
+          <h3>Aluminium</h3>
+        </a>
+      </div>
+      <div class="product">
+        <a href="plastic.html">
+          <img src="product_images/plastic-category.png" alt="Plastic" />
+          <h3>Plastic</h3>
+        </a>
+      </div>
+      <div class="product">
+        <a href="bagasse.html">
+          <img src="product_images/bagasse-category.png" alt="Bagasse" />
+          <h3>Bagasse</h3>
+        </a>
+      </div>
+      <div class="product">
+        <a href="paper.html">
+          <img src="product_images/paper-category.png" alt="Paper & Bags" />
+          <h3>Paper & Bags</h3>
+        </a>
+      </div>
+      <div class="product">
+        <a href="napkins.html">
+          <img src="product_images/napkin-category.png" alt="Napkins & Rolls" />
+          <h3>Napkins & Rolls</h3>
+        </a>
+      </div>
+      <div class="product">
+        <a href="lids.html">
+          <img src="product_images/lids-category.png" alt="Lids" />
+          <h3>Lids</h3>
+        </a>
+      </div>
+      <div class="product">
+        <a href="foil.html">
+          <img src="product_images/foil-category.png" alt="Foil & Cling Film" />
+          <h3>Foil & Cling Film</h3>
+        </a>
+      </div>
     </div>
   </main>
 
@@ -67,47 +107,50 @@
 
   <!-- Scripts -->
   <script>
+    // Sidebar menu toggle
     function toggleMenu() {
-      document.getElementById('sidebar').classList.toggle('active');
-      document.getElementById('overlay').classList.toggle('active');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      const isOpen = sidebar.classList.toggle('active');
+      overlay.classList.toggle('active', isOpen);
     }
-
     function closeMenu() {
       document.getElementById('sidebar').classList.remove('active');
       document.getElementById('overlay').classList.remove('active');
     }
 
-    document.getElementById("search").addEventListener("input", function () {
-      const query = this.value.toLowerCase();
-      document.querySelectorAll(".product").forEach(product => {
+    // Search filter
+    const search = document.getElementById("search");
+    const products = document.querySelectorAll(".product");
+    search.addEventListener("input", () => {
+      const query = search.value.toLowerCase();
+      products.forEach(product => {
         const text = product.innerText.toLowerCase();
         product.style.display = text.includes(query) ? "" : "none";
       });
     });
 
-    // Slideshow
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".slide");
-    const dots = document.querySelectorAll(".dot");
+    // Hero slider
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    let slideInterval = setInterval(nextSlide, 5000);
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
-        dots[i].classList.toggle("active", i === index);
-      });
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
     }
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-        slideIndex = i;
-        showSlide(slideIndex);
-      });
-    });
-
-    setInterval(() => {
-      slideIndex = (slideIndex + 1) % slides.length;
-      showSlide(slideIndex);
-    }, 4000);
+    function goToSlide(n) {
+      slides[currentSlide].classList.remove('active');
+      dots[currentSlide].classList.remove('active');
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
+    }
+    function setSlide(n) {
+      clearInterval(slideInterval);
+      goToSlide(n);
+      slideInterval = setInterval(nextSlide, 5000);
+    }
   </script>
 
 </body>
