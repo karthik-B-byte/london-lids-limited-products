@@ -303,3 +303,29 @@ footer .back-button {
   color: white;
   cursor: pointer;
 }
+/* Toggle button styles */
+.product h3 button {
+  background: #e4a342;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Initially hide specs */
+.product ul {
+  display: none;
+  margin-top: 10px;
+}
+
+/* Show specs when active */
+.product.active ul {
+  display: block;
+}
+
+/* Center product type headings */
+h2 {
+  text-align: center;
+}
+
