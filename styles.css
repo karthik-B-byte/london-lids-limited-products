@@ -6,98 +6,54 @@ body {
   margin: 0;
   padding: 0;
 }
-
 a {
   color: #e4a342;
   text-decoration: none;
 }
-
-a:hover {
+a:hover,
+a:focus {
   text-decoration: underline;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
 
 /* === Header Section === */
 header {
+  position: relative;
   text-align: center;
   padding: 20px;
   background-color: #0e141a;
+  color: #e4a342;
 }
-
 .logo {
   width: 150px;
   display: block;
   margin: 0 auto 10px;
 }
-
 h1 {
   color: #e4a342;
-  font-size: 2em;
+  font-size: 2rem;
+  margin: 10px 0 5px;
 }
-
+h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 5px 0;
+}
 h3 {
   color: #e4a342;
-  font-size: 1em;
+  font-size: 1rem;
+  margin: 5px 0 15px;
 }
-
 input[type="text"] {
   width: 60%;
   padding: 10px;
   margin-top: 15px;
-  font-size: 16px;
+  font-size: 1rem;
   border: none;
   border-radius: 5px;
 }
 
-/* === Main Content === */
-.container {
-  padding: 30px;
-}
-
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.product {
-  background-color: #1f2c38;
-  border-radius: 10px;
-  padding: 16px;
-  width: 280px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-}
-
-.product img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-/* === Footer === */
-footer {
-  text-align: center;
-  padding: 20px;
-  background-color: #0e141a;
-  color: white;
-  margin-top: 40px;
-}
-
-/* === Sidebar Overlay === */
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: none;
-  z-index: 8;
-}
-
-#overlay.active {
-  display: block;
-}
 /* === Hero Section === */
 .hero-section {
   position: relative;
@@ -111,10 +67,9 @@ footer {
   align-items: center;
   animation: fadeIn 1.5s ease-in forwards;
   opacity: 0.5;
-  overflow: hidden;
   text-align: center;
+  overflow: hidden;
 }
-
 .hero-section::before {
   content: "";
   position: absolute;
@@ -122,50 +77,126 @@ footer {
   background-color: rgba(0, 0, 0, 0.15);
   z-index: 0;
 }
-
-.hero-section img,
-.hero-section h1,
-.hero-section h2,
-.hero-section h3,
-.hero-section input[type="text"] {
+.hero-section * {
   position: relative;
   z-index: 1;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  color: #e4a342;
 }
-/* Override color for h2 specifically */
-.hero-section h2 {
+
+/* === Product Grid === */
+.container {
+  padding: 30px;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.product {
+  background-color: #1f2c38;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.product img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.product h3 {
+  text-align: center;
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 10px;
+  background-color: #e4a342;
+  color: #162029;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+.product h3:hover {
+  background-color: #c98d2f;
+  color: white;
+  cursor: pointer;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #0e141a;
+  color: white;
+  margin-top: 40px;
+}
+footer a {
+  display: inline-block;
+  background-color: #e4a342;
+  color: #162029;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+footer a:hover {
+  background-color: #c98d2f;
   color: white;
 }
 
-/* Adjusted spacing between elements */
-.hero-section h1 {
-  font-size: 2em;
-  margin: 10px 0 5px;
-  line-height: 1.3;
+/* === Overlay === */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 8;
+}
+#overlay.active {
+  display: block;
 }
 
-.hero-section h2 {
-  font-size: 1.5em;
+/* === Sidebar === */
+.menu-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: #e4a342;
   margin: 5px 0;
-  line-height: 1.2;
 }
-
-.hero-section h3 {
-  font-size: 1em;
-  margin: 5px 0 15px;
-  line-height: 1.2;
+nav {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #1a2733;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 9;
 }
-
-.hero-section input[type="text"] {
-  margin: 10px 0 0;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
-  width: 300px;
+nav.active {
+  left: 0;
 }
-
+nav a {
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  display: block;
+}
+nav a:hover {
+  background-color: #e4a342;
+  color: #162029;
+}
 
 /* === Animations === */
 @keyframes fadeIn {
@@ -178,128 +209,32 @@ footer {
     transform: translateY(0);
   }
 }
-
 @keyframes pulse {
-  0% {
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
-  }
-  100% {
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-  }
+  0%, 100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); }
+  50% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
 }
-
-/* === Special Effects === */
 .special-products {
-  position: relative;
-  color: #e4a342;
   animation: pulse 2s infinite;
+  color: #e4a342;
 }
 
-/* — Responsive adjustments — */
+/* === Responsive === */
 @media (max-width: 768px) {
   .products {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product {
-    width: 90%;      /* make product cards full-width on mobile */
+    grid-template-columns: 1fr;
+    padding: 10px;
   }
 
   input[type="text"] {
-    width: 90%;      /* make search box wider */
+    width: 90%;
   }
-}
-.back-btn {
-  display: inline-block;
-  background-color: #e4a342;
-  color: #162029;
-  padding: 8px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease;
-  font-family: Arial, sans-serif;
-  margin-bottom: 15px;
-}
 
-.back-btn:hover {
-  background-color: #c98d2f;
-  color: white;
-  cursor: pointer;
-}
+  .product {
+    width: 100%;
+  }
 
-header {
-  position: relative;
-  padding: 20px;
-  background-color: #0e141a;
-  color: #e4a342;
-  text-align: center;
-}
-
-.back-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-/* === Footer === */
-footer a {
-  display: inline-block;
-  background-color: #e4a342;
-  color: #162029;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-footer a:hover {
-  background-color: #c98d2f;
-  color: white;
-}
-/* --- Back Button Styling --- */
-.back-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #e4a342;
-  color: #162029;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.back-button:hover {
-  background-color: #c98d2f;
-  color: white;
-}
-
-/* --- Centering footer button --- */
-footer .back-button {
-  display: inline-block;
-  margin: 10px auto;
-}
-
-/* --- Product card h3 styled as full-width buttons --- */
-.product h3 {
-  text-align: center;
-  width: 100%;
-  padding: 12px 0;
-  margin-top: 10px;
-  background-color: #e4a342;
-  color: #162029;
-  border-radius: 6px;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
-}
-
-.product h3:hover {
-  background-color: #c98d2f;
-  color: white;
-  cursor: pointer;
+  .menu-toggle {
+    top: 15px;
+    left: 15px;
+  }
 }
