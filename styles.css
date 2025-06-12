@@ -19,46 +19,155 @@ a:hover {
 /* === Header Section === */
 header {
   text-align: center;
-  padding: 20px;
   background-color: #0e141a;
   position: relative;
   color: #e4a342;
 }
 
-.logo {
-  width: 150px;
+/* Hamburger Menu */
+.menu-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: #e4a342;
+  margin: 5px 0;
+}
+
+/* Sidebar Navigation */
+nav {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #1a2733;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 9;
+}
+nav a {
+  padding: 12px 20px;
+  font-size: 18px;
+  color: white;
   display: block;
-  margin: 0 auto 10px;
+}
+nav a:hover {
+  background-color: #e4a342;
+  color: #162029;
+}
+nav.active {
+  left: 0;
 }
 
-h1 {
-  color: #e4a342;
-  font-size: 2em;
-  margin: 10px 0;
+/* Sidebar Overlay */
+#overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0,0,0,0.3);
+  display: none;
+  z-index: 8;
+}
+#overlay.active {
+  display: block;
 }
 
-h2 {
-  color: #e4a342;
-  font-size: 1.5em;
-  margin: 5px 0 20px;
+/* === Hero Section (Homepage only) === */
+.hero-section.slider {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.hero-section .slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 0;
+}
+.hero-section .slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-section .hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 0 20px;
 }
 
-h3 {
+.hero-section .logo {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+.hero-section h1 {
+  font-size: 2em;
+  margin: 10px 0 5px;
   color: #e4a342;
-  font-size: 1em;
-  margin: 10px 0 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
-input[type="text"] {
-  width: 60%;
-  max-width: 400px;
+.hero-section h2 {
+  font-size: 1.5em;
+  margin: 5px 0;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.hero-section h3 {
+  font-size: 1em;
+  margin: 5px 0 15px;
+  color: #e4a342;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.hero-section input[type="text"] {
+  width: 300px;
+  max-width: 90vw;
   padding: 10px;
-  margin: 15px auto 0;
-  font-size: 16px;
-  border: none;
   border-radius: 5px;
-  display: block;
+  border: none;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* Slider dots */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+}
+.dots .dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 6px;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.dots .dot.active {
+  background-color: #e4a342;
 }
 
 /* === Main Content === */
@@ -87,18 +196,15 @@ input[type="text"] {
   align-items: center;
   transition: transform 0.3s ease;
 }
-
 .product:hover {
   transform: translateY(-5px);
 }
-
 .product img {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 14px; /* spacing between image and title */
   object-fit: contain;
 }
-
 .product h3 {
   text-align: center;
   width: 100%;
@@ -111,7 +217,6 @@ input[type="text"] {
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
-
 .product h3:hover {
   background-color: #c98d2f;
   color: white;
@@ -136,111 +241,51 @@ footer a {
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
-
 footer a:hover {
   background-color: #c98d2f;
   color: white;
 }
 
-/* === Sidebar Overlay === */
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  display: none;
-  z-index: 8;
-}
-
-#overlay.active {
-  display: block;
-}
-
-/* === Hero Section === */
-.hero-section {
-  position: relative;
-  height: 400px;
-  background-image: url('product_images/background_homepage_clean.png');
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  animation: fadeIn 1.5s ease-in forwards;
-  opacity: 1;
-  overflow: hidden;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.hero-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.2); /* 20% opacity overlay */
-  z-index: 0;
-}
-
-.hero-section img,
-.hero-section h1,
-.hero-section h2,
-.hero-section h3,
-.hero-section input[type="text"] {
-  position: relative;
-  z-index: 1;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8); /* Adding text shadow for better visibility */
-  color: #ffdd57; /* Brighter color for text */
-}
-
-.hero-section h2 {
-  color: white; /* Better contrast */
-}
-
-.hero-section h1 {
-  font-size: 2em;
-  margin: 10px 0 5px;
-  line-height: 1.3;
-}
-
-.hero-section h2 {
-  font-size: 1.5em;
-  margin: 5px 0;
-  line-height: 1.2;
-}
-
-.hero-section h3 {
-  font-size: 1em;
-  margin: 5px 0 15px;
-  line-height: 1.2;
-}
-
-.hero-section input[type="text"] {
-  background-color: rgba(255, 255, 255, 0.85);
-  color: #162029;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  position: relative;
-  z-index: 1;
-}
-
-/* === Animations === */
-@keyframes fadeIn {
-  from {
-    opacity: 0.5;
-    transform: translateY(-10px);
+/* === Responsive adjustments === */
+@media (max-width: 1024px) {
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .hero-section input[type="text"] {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .hero-section input[type="text"] {
+    width: 90%;
+  }
+  .product {
+    max-width: none;
+  }
+}
+@media (max-width: 480px) {
+  .products {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .hero-section input[type="text"] {
+    width: 95%;
   }
 }
 
+/* === Special Effects === */
+.special-products {
+  position: relative;
+  color: #e4a342;
+  animation: pulse 2s infinite;
+}
+
+/* Animations */
 @keyframes pulse {
   0% {
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
@@ -253,60 +298,7 @@ footer a:hover {
   }
 }
 
-/* === Special Effects === */
-.special-products {
-  position: relative;
-  color: #e4a342;
-  animation: pulse 2s infinite;
-}
-
-/* === Responsive adjustments === */
-@media (max-width: 1024px) {
-  .products {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  input[type="text"] {
-    width: 80%;
-  }
-}
-
-@media (max-width: 768px) {
-  .products {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  input[type="text"] {
-    width: 90%;
-  }
-
-  .product {
-    max-width: none;
-  }
-}
-
-@media (max-width: 480px) {
-  .products {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  input[type="text"] {
-    width: 95%;
-  }
-}
-
-/* === Back Button in Header === */
-header {
-  position: relative;
-  padding: 20px;
-  background-color: #0e141a;
-  color: #e4a342;
-  text-align: center;
-}
-
+/* Back to Home Button (only on inner pages) */
 .back-btn {
   position: absolute;
   top: 20px;
@@ -322,7 +314,6 @@ header {
   font-family: Arial, sans-serif;
   z-index: 20;
 }
-
 .back-btn:hover {
   background-color: #c98d2f;
   color: white;
