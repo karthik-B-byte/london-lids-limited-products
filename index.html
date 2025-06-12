@@ -15,6 +15,7 @@
 
   <!-- Sidebar Navigation -->
   <nav id="sidebar">
+    <a href="javascript:void(0)" onclick="closeMenu()" class="close-link">× Close</a>
     <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="products.html" class="special-products">Products</a>
@@ -27,6 +28,7 @@
 
   <!-- Header Section -->
   <header>
+    <a href="index.html" class="back-btn">← Home</a>
     <div class="hero-section">
       <img src="logo.png" alt="London Lids Logo" class="logo" />
       <h1>London Lids Ltd</h1>
@@ -57,27 +59,32 @@
 
   <!-- Scripts -->
   <script>
-    function toggleMenu() {
+    document.addEventListener("DOMContentLoaded", () => {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('overlay');
-      const isOpen = sidebar.classList.toggle('active');
-      overlay.classList.toggle('active', isOpen);
-    }
 
-    function closeMenu() {
-      document.getElementById('sidebar').classList.remove('active');
-      document.getElementById('overlay').classList.remove('active');
-    }
+      window.toggleMenu = () => {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active', sidebar.classList.contains('active'));
+      };
 
-    const search = document.getElementById("search");
-    const products = document.querySelectorAll(".product");
+      window.closeMenu = () => {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+      };
 
-    search.addEventListener("input", () => {
-      const query = search.value.toLowerCase();
-      products.forEach(product => {
-        const text = product.innerText.toLowerCase();
-        product.style.display = text.includes(query) ? "" : "none";
-      });
+      const search = document.getElementById("search");
+      const products = document.querySelectorAll(".product");
+
+      if (search) {
+        search.addEventListener("input", () => {
+          const query = search.value.toLowerCase();
+          products.forEach(product => {
+            const text = product.innerText.toLowerCase();
+            product.style.display = text.includes(query) ? "" : "none";
+          });
+        });
+      }
     });
   </script>
 </body>
