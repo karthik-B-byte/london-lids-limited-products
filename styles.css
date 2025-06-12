@@ -12,20 +12,17 @@ a {
   text-decoration: none;
 }
 
-a:hover,
-a:focus {
+a:hover {
   text-decoration: underline;
-  outline: none;
 }
 
 /* === Header Section === */
 header {
-  position: relative;
   text-align: center;
-  padding: 20px 15px;
+  padding: 20px;
   background-color: #0e141a;
+  position: relative;
   color: #e4a342;
-  box-sizing: border-box;
 }
 
 .logo {
@@ -37,107 +34,76 @@ header {
 h1 {
   color: #e4a342;
   font-size: 2em;
-  margin: 0;
+  margin: 10px 0;
+}
+
+h2 {
+  color: #e4a342;
+  font-size: 1.5em;
+  margin: 5px 0 20px;
+  text-align: center;
 }
 
 h3 {
   color: #e4a342;
   font-size: 1em;
-  margin: 0;
+  margin: 10px 0 0;
 }
 
 input[type="text"] {
   width: 60%;
   max-width: 400px;
   padding: 10px;
-  margin-top: 15px;
+  margin: 15px auto 0;
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  box-sizing: border-box;
-}
-
-/* === Back Button === */
-.back-btn {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  display: inline-block;
-  background-color: #e4a342;
-  color: #162029;
-  padding: 8px 20px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease;
-  font-family: Arial, sans-serif;
-}
-
-.back-btn:hover,
-.back-btn:focus {
-  background-color: #c98d2f;
-  color: white;
-  cursor: pointer;
-  outline: none;
-}
-
-.back-btn:focus {
-  outline: 3px solid #e4a342;
-  outline-offset: 2px;
+  display: block;
 }
 
 /* === Main Content === */
 .container {
+  padding: 30px 15px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 30px 15px;
-  box-sizing: border-box;
 }
 
-h2 {
-  text-align: center;
-  color: #e4a342;
-  margin-top: 40px;
-  margin-bottom: 25px;
-  font-size: 1.8em;
-}
-
-/* === Products Grid === */
 .products {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px; /* spacing between cards */
+  justify-items: center;
 }
 
 .product {
   background-color: #1f2c38;
   border-radius: 10px;
   padding: 16px;
-  width: 280px;
+  width: 100%;
+  max-width: 280px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 400px;
-  box-sizing: border-box;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
 }
 
 .product img {
   width: 100%;
   border-radius: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 14px; /* spacing between image and title */
   object-fit: contain;
-  aspect-ratio: 4 / 3;
 }
 
 .product h3 {
   text-align: center;
   width: 100%;
   padding: 12px 0;
-  margin-top: 10px;
+  margin: 0;
   background-color: #e4a342;
   color: #162029;
   border-radius: 6px;
@@ -146,21 +112,18 @@ h2 {
   cursor: pointer;
 }
 
-.product h3:hover,
-.product h3:focus {
+.product h3:hover {
   background-color: #c98d2f;
   color: white;
-  outline: none;
 }
 
 /* === Footer === */
 footer {
   text-align: center;
-  padding: 20px 15px;
+  padding: 20px;
   background-color: #0e141a;
   color: white;
   margin-top: 40px;
-  box-sizing: border-box;
 }
 
 footer a {
@@ -174,16 +137,9 @@ footer a {
   transition: background-color 0.3s ease;
 }
 
-footer a:hover,
-footer a:focus {
+footer a:hover {
   background-color: #c98d2f;
   color: white;
-  outline: none;
-}
-
-footer a:focus {
-  outline: 3px solid #e4a342;
-  outline-offset: 2px;
 }
 
 /* === Sidebar Overlay === */
@@ -217,7 +173,7 @@ footer a:focus {
   opacity: 0.5;
   overflow: hidden;
   text-align: center;
-  box-sizing: border-box;
+  margin-bottom: 40px;
 }
 
 .hero-section::before {
@@ -243,7 +199,6 @@ footer a:focus {
   color: white;
 }
 
-/* Adjusted spacing between elements */
 .hero-section h1 {
   font-size: 2em;
   margin: 10px 0 5px;
@@ -269,8 +224,6 @@ footer a:focus {
   border: none;
   font-size: 16px;
   width: 300px;
-  max-width: 90vw;
-  box-sizing: border-box;
 }
 
 /* === Animations === */
@@ -305,34 +258,39 @@ footer a:focus {
 }
 
 /* === Responsive adjustments === */
-@media (max-width: 768px) {
-  .container {
-    padding: 15px 10px;
-  }
-  
+@media (max-width: 1024px) {
   .products {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .product {
-    width: 100%;
-    max-width: 400px;
-    min-height: auto; /* Let height adjust to content on mobile */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 
   input[type="text"] {
-    width: 100%;
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .products {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
-  .back-btn {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 999;
+  input[type="text"] {
+    width: 90%;
   }
 
-  header {
-    padding-top: 60px; /* space for fixed back button */
+  .product {
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .products {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  input[type="text"] {
+    width: 95%;
   }
 }
