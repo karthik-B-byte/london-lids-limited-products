@@ -5,10 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Paper & Plastic Bags</title>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Make image and title appear clickable */
+    .product h3, .product img {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
-      <a href="index.html" class="back-btn">← Back to Home</a>
+    <a href="index.html" class="back-btn">← Back to Home</a>
     <h1>Paper & Plastic Bags</h1>
   </header>
 
@@ -17,9 +23,9 @@
     <h2 style="color: #e4a342;">Paper Bags</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/paper bag kraft.png" alt="Kraft Paper Bags">
+        <img src="product_images/paper bag kraft.png" alt="Kraft Paper Bags" />
         <h3>Kraft Paper Bags</h3>
-        <ul>
+        <ul class="specs" style="display:none;">
           <li>Sizes: Small, Medium, Large</li>
           <li>Pack Size: 250 pcs</li>
           <li>Types: Greaseproof, White Sulphate, SOS</li>
@@ -33,9 +39,9 @@
     <h2 style="color: #e4a342;">Plastic SOS Bags</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/plastic bag small.png" alt="Plastic SOS Bags">
+        <img src="product_images/plastic bag small.png" alt="Plastic SOS Bags" />
         <h3>Plastic SOS Bags</h3>
-        <ul>
+        <ul class="specs" style="display:none;">
           <li>Small: 18×10×22 cm</li>
           <li>Medium: 21.5×11.5×25.5 cm</li>
           <li>Large: 28×13×32.5 cm</li>
@@ -48,9 +54,9 @@
     <h2 style="color: #e4a342;">Paper Cups</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/paper cups.png" alt="Paper Cups">
+        <img src="product_images/paper cups.png" alt="Paper Cups" />
         <h3>Double-Wall Ripple Paper Cups</h3>
-        <ul>
+        <ul class="specs" style="display:none;">
           <li>Sizes: 8oz & 12oz</li>
           <li>Colors: Black or Brown</li>
           <li>Pack Sizes:</li>
@@ -64,9 +70,9 @@
     <h2 style="color: #e4a342;">Greaseproof Liners</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/greaseproof liners.png" alt="Greaseproof Liners">
+        <img src="product_images/greaseproof liners.png" alt="Greaseproof Liners" />
         <h3>Greaseproof Liners</h3>
-        <ul>
+        <ul class="specs" style="display:none;">
           <li>Color: White or Brown</li>
           <li>Various sizes for food wrapping</li>
           <li>Commonly used for bakery, sandwiches, wraps</li>
@@ -78,9 +84,9 @@
     <h2 style="color: #e4a342;">Foil Bags</h2>
     <div class="products">
       <div class="product">
-        <img src="product_images/foil bags.png" alt="Foil Bags">
+        <img src="product_images/foil bags.png" alt="Foil Bags" />
         <h3>Foil Bags</h3>
-        <ul>
+        <ul class="specs" style="display:none;">
           <li>Insulated foil-lined for hot food</li>
           <li>Sizes: Small, Medium, Large</li>
           <li>Ideal for kebabs, burgers, etc.</li>
@@ -91,7 +97,25 @@
 
   </div>
 
-  <footer><p><a href="index.html">← Back to Home</a></p>
-<p>&copy; 2025 London Lids Ltd. All rights reserved.</p></footer>
+  <footer>
+    <p><a href="index.html">← Back to Home</a></p>
+    <p>&copy; 2025 London Lids Ltd. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.product').forEach(product => {
+      const img = product.querySelector('img');
+      const title = product.querySelector('h3');
+      const specs = product.querySelector('.specs');
+
+      function toggleSpecs() {
+        if (!specs) return;
+        specs.style.display = specs.style.display === 'block' ? 'none' : 'block';
+      }
+
+      img.addEventListener('click', toggleSpecs);
+      title.addEventListener('click', toggleSpecs);
+    });
+  </script>
 </body>
 </html>
