@@ -16,6 +16,46 @@ a:hover {
   text-decoration: underline;
 }
 
+/* === Global Search Bar === */
+#global-search-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  z-index: 1000;
+  text-align: left;
+}
+
+#global-search {
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+#search-results {
+  position: absolute;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0 0 8px 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+#search-results a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #000;
+}
+
+#search-results a:hover {
+  background-color: #eee;
+}
+
 /* === Header Section === */
 header {
   text-align: center;
@@ -66,7 +106,6 @@ nav.active {
   left: 0;
 }
 
-/* Sidebar Overlay */
 #overlay {
   position: fixed;
   top: 0; left: 0;
@@ -79,13 +118,12 @@ nav.active {
   display: block;
 }
 
-/* === Hero Section (Homepage only) === */
+/* === Hero Section === */
 .hero-section.slider {
   position: relative;
   height: 400px;
   overflow: hidden;
 }
-
 .hero-section .slide {
   position: absolute;
   inset: 0;
@@ -99,7 +137,6 @@ nav.active {
   opacity: 1;
   z-index: 1;
 }
-
 .hero-section .hero-content {
   position: relative;
   z-index: 2;
@@ -111,33 +148,25 @@ nav.active {
   text-align: center;
   padding: 0 20px;
 }
-
 .hero-section .logo {
   width: 150px;
   margin-bottom: 10px;
 }
-
+.hero-section h1, h2, h3 {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
 .hero-section h1 {
   font-size: 2em;
-  margin: 10px 0 5px;
   color: #e4a342;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
-
 .hero-section h2 {
   font-size: 1.5em;
-  margin: 5px 0;
   color: white;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
-
 .hero-section h3 {
   font-size: 1em;
-  margin: 5px 0 15px;
   color: #e4a342;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
-
 .hero-section input[type="text"] {
   width: 300px;
   max-width: 90vw;
@@ -147,8 +176,6 @@ nav.active {
   font-size: 16px;
   margin-top: 10px;
 }
-
-/* Slider dots */
 .dots {
   position: absolute;
   bottom: 15px;
@@ -164,33 +191,29 @@ nav.active {
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 .dots .dot.active {
   background-color: #e4a342;
 }
 
-/* === Main Content === */
+/* === Product Grid === */
 .container {
   padding: 30px 15px;
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px; /* spacing between cards */
+  gap: 24px;
   justify-items: center;
 }
-
 .product {
   background-color: #1f2c38;
   border-radius: 10px;
   padding: 16px;
-  width: 100%;
   max-width: 280px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -202,19 +225,16 @@ nav.active {
 .product img {
   width: 100%;
   border-radius: 8px;
-  margin-bottom: 14px; /* spacing between image and title */
+  margin-bottom: 14px;
   object-fit: contain;
 }
 .product h3 {
-  text-align: center;
   width: 100%;
+  text-align: center;
   padding: 12px 0;
-  margin: 0;
   background-color: #e4a342;
   color: #162029;
   border-radius: 6px;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
   cursor: pointer;
 }
 .product h3:hover {
@@ -230,75 +250,45 @@ footer {
   color: white;
   margin-top: 40px;
 }
-
 footer a {
-  display: inline-block;
   background-color: #e4a342;
   color: #162029;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 footer a:hover {
   background-color: #c98d2f;
   color: white;
 }
 
-/* === Responsive adjustments === */
+/* === Responsive === */
 @media (max-width: 1024px) {
   .products {
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-  .hero-section input[type="text"] {
-    width: 80%;
   }
 }
 @media (max-width: 768px) {
   .products {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-  .hero-section input[type="text"] {
-    width: 90%;
-  }
-  .product {
-    max-width: none;
   }
 }
 @media (max-width: 480px) {
   .products {
     grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .hero-section input[type="text"] {
-    width: 95%;
   }
 }
 
-/* === Special Effects === */
+/* === Extras === */
 .special-products {
-  position: relative;
-  color: #e4a342;
   animation: pulse 2s infinite;
 }
-
-/* Animations */
 @keyframes pulse {
-  0% {
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
-  }
-  100% {
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-  }
+  0% { text-shadow: 0 0 5px rgba(255,255,255,0.3); }
+  50% { text-shadow: 0 0 20px rgba(255,255,255,1); }
+  100% { text-shadow: 0 0 5px rgba(255,255,255,0.3); }
 }
-
-/* Back to Home Button (only on inner pages) */
 .back-btn {
   position: absolute;
   top: 20px;
@@ -308,14 +298,9 @@ footer a:hover {
   padding: 8px 20px;
   border-radius: 6px;
   font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-  transition: background-color 0.3s ease;
-  font-family: Arial, sans-serif;
   z-index: 20;
 }
 .back-btn:hover {
   background-color: #c98d2f;
   color: white;
-  cursor: pointer;
 }
